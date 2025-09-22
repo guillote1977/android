@@ -63,7 +63,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
         when (position) {
             0 -> navigateToRegistroCliente()
             1 -> showToast("Gestionar Clientes")
-            2 -> showToast("Gestionar Pagos")
+            2 -> navigateToRegistroPago()
             3 -> showToast("Gestionar Actividades")
             4 -> showToast("Gestionar Usuarios")
             5 -> showToast("Gestionar Profesores")
@@ -75,6 +75,13 @@ class MenuPrincipalActivity : AppCompatActivity() {
         val intent = Intent(this, RegistroClienteActivity::class.java)
         startActivity(intent)
     }
+
+    private fun navigateToRegistroPago() {
+        val intent = Intent(this, RegistroPagoActivity::class.java)
+        startActivity(intent)
+    }
+
+
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

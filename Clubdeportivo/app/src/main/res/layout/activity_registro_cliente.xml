@@ -42,211 +42,211 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@drawable/rounded_card"
+            android:orientation="vertical"
             android:padding="24dp">
 
             <!-- Nombre Completo -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Nombre Completo"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etNombreCompleto"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:hint="Juan Sanchez"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#80FFFFFF"
-                android:background="@drawable/edit_text_background"
-                android:padding="16dp"
                 android:layout_marginBottom="20dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Juan Sanchez"
+                android:imeOptions="actionNext"
                 android:inputType="textPersonName"
-                android:imeOptions="actionNext"/>
+                android:padding="16dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#80FFFFFF" />
 
             <!-- Email -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Email"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:hint="onyxfitness@tuemail.com"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#80FFFFFF"
-                android:background="@drawable/edit_text_background"
-                android:padding="16dp"
                 android:layout_marginBottom="20dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="onyxfitness@tuemail.com"
+                android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
-                android:imeOptions="actionNext"/>
+                android:padding="16dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#80FFFFFF" />
 
             <!-- DNI -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="DNI"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etDNI"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:hint="Introduce el documento de DNI"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#80FFFFFF"
-                android:background="@drawable/edit_text_background"
-                android:padding="16dp"
                 android:layout_marginBottom="20dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Introduce el documento de DNI"
+                android:imeOptions="actionNext"
                 android:inputType="number"
-                android:imeOptions="actionNext"/>
+                android:padding="16dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#80FFFFFF" />
 
             <!-- Teléfono -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Teléfono"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:hint="Introduce el número telefónico"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#80FFFFFF"
-                android:background="@drawable/edit_text_background"
-                android:padding="16dp"
                 android:layout_marginBottom="20dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Introduce el número telefónico"
+                android:imeOptions="actionNext"
                 android:inputType="phone"
-                android:imeOptions="actionNext"/>
+                android:padding="16dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#80FFFFFF" />
 
             <!-- Tipo de Membresía -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Tipo de Membresía"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/rgMembresia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/rbSocio"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Socio"
-                    android:textColor="#FFFFFF"
                     android:buttonTint="#FFFFFF"
-                    android:checked="true"/>
+                    android:checked="true"
+                    android:text="Socio"
+                    android:textColor="#FFFFFF" />
 
                 <RadioButton
                     android:id="@+id/rbNoSocio"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:buttonTint="#FFFFFF"
                     android:text="No Socio"
-                    android:textColor="#FFFFFF"
-                    android:buttonTint="#FFFFFF"/>
+                    android:textColor="#FFFFFF" />
             </RadioGroup>
 
             <!-- Apto Físico -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Apto Físico"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/rgAptoFisico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="30dp">
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/rbSi"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:buttonTint="#FFFFFF"
                     android:text="Sí"
-                    android:textColor="#FFFFFF"
-                    android:buttonTint="#FFFFFF"/>
+                    android:textColor="#FFFFFF" />
 
                 <RadioButton
                     android:id="@+id/rbNo"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="No"
-                    android:textColor="#FFFFFF"
                     android:buttonTint="#FFFFFF"
-                    android:checked="true"/>
+                    android:checked="true"
+                    android:text="No"
+                    android:textColor="#FFFFFF" />
             </RadioGroup>
 
             <!-- Botones en horizontal -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
-                android:weightSum="2"
-                android:layout_marginTop="10dp">
+                android:weightSum="2">
 
                 <!-- Botón Volver -->
                 <Button
                     android:id="@+id/btnVolver"
                     android:layout_width="0dp"
                     android:layout_height="55dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/button_secondary"
                     android:text="VOLVER"
                     android:textAllCaps="true"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:background="@drawable/button_secondary"
                     android:textColor="#FFFFFF"
-                    android:layout_marginEnd="8dp"/>
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <!-- Botón Registrar -->
                 <Button
                     android:id="@+id/btnRegistrar"
                     android:layout_width="0dp"
                     android:layout_height="55dp"
+                    android:layout_marginStart="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/button_primary"
                     android:text="REGISTRAR"
                     android:textAllCaps="true"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:background="@drawable/button_primary"
                     android:textColor="#FFFFFF"
-                    android:layout_marginStart="8dp"/>
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
