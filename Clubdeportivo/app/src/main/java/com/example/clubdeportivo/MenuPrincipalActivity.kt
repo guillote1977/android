@@ -9,34 +9,25 @@ import android.widget.*
 
 class MenuPrincipalActivity : AppCompatActivity() {
 
-    private lateinit var gridMenu: GridView
-    private lateinit var btnLogout: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_principal)
 
-        initializeViews()
-        setupGridMenu()
-        setupLogoutButton()
-    }
+        val btnLogout = findViewById<Button>(R.id.btnLogout)
+        val gridMenu = findViewById<GridView>(R.id.gridMenu)
 
-    private fun initializeViews() {
-        gridMenu = findViewById(R.id.gridMenu)
-        btnLogout = findViewById(R.id.btnLogout)
-    }
-
-    private fun setupGridMenu() {
+        // Lista de opciones del menú - ACTUALIZADA
         val menuItems = listOf(
             "Registrar CLIENTE" to android.R.drawable.ic_menu_add,
             "Gestionar CLIENTES" to android.R.drawable.ic_menu_manage,
-            "Gestionar PAGO" to android.R.drawable.ic_menu_edit,
+            "Registrar PAGO" to android.R.drawable.ic_menu_edit,
             "Gestionar ACTIVIDADES" to android.R.drawable.ic_menu_day,
             "Gestionar USUARIOS" to android.R.drawable.ic_menu_my_calendar,
             "Gestionar Profesores" to android.R.drawable.ic_menu_compass,
             "Asistencia Profesores" to android.R.drawable.ic_menu_agenda
         )
 
+        // Adaptador
         gridMenu.adapter = object : BaseAdapter() {
             override fun getCount(): Int = menuItems.size
             override fun getItem(position: Int): Any = menuItems[position]
@@ -44,63 +35,55 @@ class MenuPrincipalActivity : AppCompatActivity() {
 
             override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
                 val view = convertView ?: layoutInflater.inflate(R.layout.grid_item_menu, parent, false)
-
                 val (title, iconRes) = menuItems[position]
-
                 view.findViewById<ImageView>(R.id.iconMenu).setImageResource(iconRes)
                 view.findViewById<TextView>(R.id.textMenu).text = title
-
                 return view
             }
         }
 
+        // Click listener ACTUALIZADO con GestionClientesActivity
         gridMenu.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-            handleMenuItemClick(position)
+            when (position) {
+                0 -> {
+                    // Registrar CLIENTE
+                    val intent = Intent(this@MenuPrincipalActivity, RegistroClienteActivity::class.java)
+                    startActivity(intent)
+                }
+                1 -> {
+                    // Gestionar CLIENTES - ¡NUEVA CONEXIÓN!
+                    val intent = Intent(this@MenuPrincipalActivity, GestionClientesActivity::class.java)
+                    startActivity(intent)
+                }
+                2 -> {
+                    // Registrar PAGO
+                    val intent = Intent(this@MenuPrincipalActivity, RegistroPagoActivity::class.java)
+                    startActivity(intent)
+                }
+                3 -> {
+                    // Gestionar ACTIVIDADES
+                    Toast.makeText(this, "Gestionar Actividades - Próximamente", Toast.LENGTH_SHORT).show()
+                }
+                4 -> {
+                    // Gestionar USUARIOS
+                    Toast.makeText(this, "Gestionar Usuarios - Próximamente", Toast.LENGTH_SHORT).show()
+                }
+                5 -> {
+                    // Gestionar Profesores
+                    Toast.makeText(this, "Gestionar Profesores - Próximamente", Toast.LENGTH_SHORT).show()
+                }
+                6 -> {
+                    // Asistencia Profesores
+                    Toast.makeText(this, "Asistencia Profesores - Próximamente", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
-    }
 
-    private fun handleMenuItemClick(position: Int) {
-        when (position) {
-            0 -> navigateToRegistroCliente()
-            1 -> showToast("Gestionar Clientes")
-            2 -> navigateToRegistroPago()
-            3 -> showToast("Gestionar Actividades")
-            4 -> showToast("Gestionar Usuarios")
-            5 -> showToast("Gestionar Profesores")
-            6 -> showToast("Asistencia Profesores")
-        }
-    }
-
-    private fun navigateToRegistroCliente() {
-        val intent = Intent(this, RegistroClienteActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun navigateToRegistroPago() {
-        val intent = Intent(this, RegistroPagoActivity::class.java)
-        startActivity(intent)
-    }
-
-
-
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    private fun setupLogoutButton() {
+        // Botón de cerrar sesión
         btnLogout.setOnClickListener {
-            logout()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
-    }
-
-    private fun logout() {
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-    override fun onBackPressed() {
-        // Minimizar la aplicación en lugar de cerrarla
-        moveTaskToBack(true)
     }
 }

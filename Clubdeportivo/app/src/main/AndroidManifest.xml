@@ -11,9 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClubDeportivo"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".RegistroPagoActivity"
-            android:exported="false" />
+
         <!-- Actividad de Login (Pantalla inicial) -->
         <activity
             android:name=".LoginActivity"
@@ -21,28 +19,107 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Actividad del Menú Principal -->
+        </activity>
+
+        <!-- Actividad del Menú Principal -->
         <activity
             android:name=".MenuPrincipalActivity"
             android:exported="false"
-            android:parentActivityName=".LoginActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
-        </activity> <!-- Actividad de Registro de Cliente -->
+        </activity>
+
+        <!-- Actividad de Registro de Cliente -->
         <activity
             android:name=".RegistroClienteActivity"
             android:exported="false"
-            android:parentActivityName=".MenuPrincipalActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MenuPrincipalActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MenuPrincipalActivity" />
         </activity>
+
+        <!-- NUEVA: Actividad de Gestión de Clientes -->
+        <activity
+            android:name=".GestionClientesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MenuPrincipalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipalActivity" />
+        </activity>
+
+        <activity
+            android:name=".ComprobantePagoActivity"
+            android:exported="false"
+            android:parentActivityName=".RegistroPagoActivity">
+        </activity>
+
+        <activity
+            android:name=".RegistroPagoActivity"
+            android:exported="false"
+            android:parentActivityName=".MenuPrincipalActivity">
+        </activity>
+
+        <activity
+            android:name=".EditarClienteActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".GestionClientesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GestionClientesActivity" />
+        </activity>
+        <!-- Actividades para futuras implementaciones (opcionales) -->
+        <!--
+        <activity
+            android:name=".GestionActividadesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MenuPrincipalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipalActivity" />
+        </activity>
+
+        <activity
+            android:name=".GestionUsuariosActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MenuPrincipalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipalActivity" />
+        </activity>
+
+        <activity
+            android:name=".GestionProfesoresActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MenuPrincipalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipalActivity" />
+        </activity>
+
+        <activity
+            android:name=".AsistenciaProfesoresActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MenuPrincipalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipalActivity" />
+        </activity>
+        -->
+
     </application>
 
 </manifest>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_background_gradient"
+    android:padding="16dp">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Clientes"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Barra de búsqueda -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/etBuscarCliente"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="Introduce DNI o ID del cliente a buscar"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:padding="16dp"
+            android:imeOptions="actionSearch"/>
+
+        <ImageButton
+            android:id="@+id/btnBuscar"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/button_primary"
+            android:src="@android:drawable/ic_menu_search"
+            android:tint="#FFFFFF"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Filtros -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filtros"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnTodos"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Todos"
+                android:background="@drawable/button_filter_active"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnMorosos"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Morosos"
+                android:background="@drawable/button_filter_inactive"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnPorVencer"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Por Vencer"
+                android:background="@drawable/button_filter_inactive"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnSinApto"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Sin apto físico"
+                android:background="@drawable/button_filter_inactive"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnActivos"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Activos"
+                android:background="@drawable/button_filter_inactive"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnInactivos"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Inactivos"
+                android:background="@drawable/button_filter_inactive"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Lista de clientes -->
+    <TextView
+        android:id="@+id/tvResultados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clientes encontrados: 4"
+        android:textColor="#80FFFFFF"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvClientes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón Compartir -->
+    <Button
+        android:id="@+id/btnCompartirLista"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_export"
+        android:text="📤 Compartir Lista de Clientes"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+    <!-- Botones de acción PRINCIPALES -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <!-- Botón Nuevo Cliente -->
+        <Button
+            android:id="@+id/btnNuevoCliente"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_primary"
+            android:text="Nuevo Cliente"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+
+        <!-- Botón Editar -->
+        <Button
+            android:id="@+id/btnEditarCliente"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_secondary"
+            android:text="Editar"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+
+        <!-- Botón Volver -->
+        <Button
+            android:id="@+id/btnVolverGestion"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_secondary"
+            android:text="Volver"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</LinearLayout>
