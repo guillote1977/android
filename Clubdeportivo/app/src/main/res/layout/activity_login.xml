@@ -12,15 +12,15 @@
         android:scaleType="centerCrop"
         android:src="@drawable/pantlogin" />
 
-    <!-- Overlay oscuro -->
-
-    <!-- Contenido principal -->
+    <!-- Contenedor gris centrado -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="704dp"
-        android:gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:orientation="vertical"
-        android:padding="40dp">
+        android:background="@drawable/rounded_card"
+        android:padding="40dp"
+        android:gravity="center">
 
         <!-- ONYX FITNESS -->
         <TextView
@@ -29,69 +29,81 @@
             android:layout_marginBottom="10dp"
             android:text="ONYX FITNESS"
             android:textColor="#FFFFFF"
-            android:textSize="36sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <!-- ADMIN -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="30dp"
             android:alpha="0.8"
             android:text="ADMIN"
             android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <!-- Separador -->
         <View
             android:layout_width="80dp"
             android:layout_height="2dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="30dp"
             android:background="#80FFFFFF" />
 
         <!-- Campo Usuario -->
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/edit_text_onyx"
+            android:background="@drawable/edit_text_background"
             android:hint="Usuario"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:padding="16dp"
             android:textColor="#FFFFFF"
-            android:textColorHint="#80FFFFFF" />
+            android:textColorHint="#80FFFFFF"
+            android:gravity="center" />
 
         <!-- Campo Contraseña -->
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="40dp"
-            android:background="@drawable/edit_text_onyx"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/edit_text_background"
             android:hint="Contraseña"
             android:inputType="textPassword"
             android:padding="16dp"
             android:textColor="#FFFFFF"
-            android:textColorHint="#80FFFFFF" />
+            android:textColorHint="#80FFFFFF"
+            android:gravity="center" />
 
         <!-- Botón Ingresar -->
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="#FFFFFF"
+            android:layout_height="50dp"
+            android:background="@drawable/button_primary"
             android:text="INGRESAR"
             android:textAllCaps="true"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="46dp"
-            android:background="#80000000" />
-
     </LinearLayout>
+
+    <!-- Botón Conexión BD - FUERA del cuadro gris, en la parte inferior -->
+    <Button
+        android:id="@+id/btnConexionBD"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_secondary"
+        android:text="Conexión BD"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp" />
 
 </RelativeLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_background_gradient"
+    android:padding="16dp">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Actividades"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Barra de búsqueda -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/etBuscarActividad"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_text_background"
+            android:hint="Buscar actividad..."
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:padding="16dp"
+            android:imeOptions="actionSearch"/>
+
+        <ImageButton
+            android:id="@+id/btnBuscarActividad"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/button_primary"
+            android:src="@android:drawable/ic_menu_search"
+            android:tint="#FFFFFF"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Contador de resultados -->
+    <TextView
+        android:id="@+id/tvResultados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actividades encontradas: 4"
+        android:textColor="#80FFFFFF"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Lista de actividades -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvActividades"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botones de acción -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <!-- Botón Nueva Actividad -->
+        <Button
+            android:id="@+id/btnNuevaActividad"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_primary"
+            android:text="➕ Nueva"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+
+        <!-- Botón Exportar -->
+        <Button
+            android:id="@+id/btnExportar"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_export"
+            android:text="📤 Exportar"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+
+        <!-- Botón Volver -->
+        <Button
+            android:id="@+id/btnVolverActividades"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_secondary"
+            android:text="Volver"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</LinearLayout>

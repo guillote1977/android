@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import android.widget.Toast
 
 class MenuPrincipalActivity : AppCompatActivity() {
 
@@ -16,7 +17,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
         val btnLogout = findViewById<Button>(R.id.btnLogout)
         val gridMenu = findViewById<GridView>(R.id.gridMenu)
 
-        // Lista de opciones del menú - ACTUALIZADA (sin Asistencia Profesores)
+        // Lista de opciones del menú - ACTUALIZADA con Gestión de Actividades
         val menuItems = listOf(
             "Registrar CLIENTE" to android.R.drawable.ic_menu_add,
             "Gestionar CLIENTES" to android.R.drawable.ic_menu_manage,
@@ -24,7 +25,6 @@ class MenuPrincipalActivity : AppCompatActivity() {
             "Gestionar ACTIVIDADES" to android.R.drawable.ic_menu_day,
             "Gestionar USUARIOS" to android.R.drawable.ic_menu_my_calendar,
             "Gestionar Profesores" to android.R.drawable.ic_menu_compass
-            // "Asistencia Profesores" removido
         )
 
         // Adaptador
@@ -42,7 +42,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
             }
         }
 
-        // Click listener ACTUALIZADO (sin Asistencia Profesores)
+        // Click listener ACTUALIZADO con Gestión de Actividades funcional
         gridMenu.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             when (position) {
                 0 -> {
@@ -61,8 +61,9 @@ class MenuPrincipalActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 3 -> {
-                    // Gestionar ACTIVIDADES
-                    Toast.makeText(this, "Gestionar Actividades - Próximamente", Toast.LENGTH_SHORT).show()
+                    // Gestionar ACTIVIDADES - AHORA FUNCIONAL
+                    val intent = Intent(this@MenuPrincipalActivity, GestionActividadesActivity::class.java)
+                    startActivity(intent)
                 }
                 4 -> {
                     // Gestionar USUARIOS
@@ -72,7 +73,6 @@ class MenuPrincipalActivity : AppCompatActivity() {
                     // Gestionar Profesores
                     Toast.makeText(this, "Gestionar Profesores - Próximamente", Toast.LENGTH_SHORT).show()
                 }
-                // Posición 6 (Asistencia Profesores) eliminada
             }
         }
 

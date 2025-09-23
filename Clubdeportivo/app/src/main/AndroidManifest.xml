@@ -87,6 +87,36 @@
                 android:value=".RegistroClienteActivity" />
         </activity>
 
+        <activity
+            android:name=".ConfigBDActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".LoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
+        </activity>
+
+        <activity
+            android:name=".GestionActividadesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MenuPrincipalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipalActivity" />
+        </activity>
+
+        <activity
+            android:name=".EditarActividadActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".GestionActividadesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GestionActividadesActivity" />
+        </activity>
+
     </application>
 
 </manifest>
