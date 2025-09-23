@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background_gradient"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎫 Carnet Digital"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Contenedor del carnet -->
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:orientation="vertical"
+            android:background="@drawable/carnet_background"
+            android:padding="20dp"
+            android:gravity="center">
+
+            <!-- Logo ONYX FITNESS -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💪 ONYX FITNESS"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Foto del cliente (placeholder) -->
+            <ImageView
+                android:id="@+id/ivFotoCliente"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rounded_photo"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_marginBottom="15dp"/>
+
+            <!-- Nombre del cliente -->
+            <TextView
+                android:id="@+id/tvNombreCarnet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="JUAN PEREZ"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="5dp"/>
+
+            <!-- DNI -->
+            <TextView
+                android:id="@+id/tvDNICarnet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DNI: 35462587"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Número de carnet -->
+            <TextView
+                android:id="@+id/tvNumeroCarnet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ONX-240123-0001"
+                android:textColor="#FFD700"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="15px"/>
+
+            <!-- Tipo de membresía -->
+            <TextView
+                android:id="@+id/tvMembresiaCarnet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SOCIO"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="#FF6200EE"
+                android:padding="8dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Fechas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvEmisionCarnet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emisión: 23/12/2024"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="10sp"/>
+
+                <TextView
+                    android:id="@+id/tvVencimientoCarnet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vence: 23/12/2025"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+
+            <!-- Estado Apt Físico -->
+            <TextView
+                android:id="@+id/tvAptoFisicoCarnet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✅ APTO FÍSICO VIGENTE"
+                android:textColor="#4CAF50"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <!-- Información del carnet -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_card"
+            android:padding="16dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tvInfoCarnet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Este carnet es válido para acceso a todas las instalaciones del club."
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Botones de acción -->
+            <Button
+                android:id="@+id/btnEnviarEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="📧 Enviar por Email"
+                android:background="@drawable/button_primary"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnCompartirCarnet"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="📤 Compartir Carnet"
+                android:background="@drawable/button_export"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnVolverCarnet"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="← Volver"
+                android:background="@drawable/button_secondary"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

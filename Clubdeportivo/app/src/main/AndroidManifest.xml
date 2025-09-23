@@ -77,48 +77,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".GestionClientesActivity" />
         </activity>
-        <!-- Actividades para futuras implementaciones (opcionales) -->
-        <!--
         <activity
-            android:name=".GestionActividadesActivity"
+            android:name=".CarnetDigitalActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:parentActivityName=".MenuPrincipalActivity">
+            android:parentActivityName=".RegistroClienteActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuPrincipalActivity" />
+                android:value=".RegistroClienteActivity" />
         </activity>
-
-        <activity
-            android:name=".GestionUsuariosActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".MenuPrincipalActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuPrincipalActivity" />
-        </activity>
-
-        <activity
-            android:name=".GestionProfesoresActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".MenuPrincipalActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuPrincipalActivity" />
-        </activity>
-
-        <activity
-            android:name=".AsistenciaProfesoresActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".MenuPrincipalActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuPrincipalActivity" />
-        </activity>
-        -->
 
     </application>
 

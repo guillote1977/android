@@ -6,7 +6,7 @@
     android:background="@drawable/main_background_gradient"
     android:padding="16dp">
 
-    <!-- Header con la imagen ONYA FITNESS -->
+    <!-- Header con la imagen ONYX FITNESS -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

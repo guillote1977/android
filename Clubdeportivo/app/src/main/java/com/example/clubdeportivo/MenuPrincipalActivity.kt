@@ -16,15 +16,15 @@ class MenuPrincipalActivity : AppCompatActivity() {
         val btnLogout = findViewById<Button>(R.id.btnLogout)
         val gridMenu = findViewById<GridView>(R.id.gridMenu)
 
-        // Lista de opciones del menú - ACTUALIZADA
+        // Lista de opciones del menú - ACTUALIZADA (sin Asistencia Profesores)
         val menuItems = listOf(
             "Registrar CLIENTE" to android.R.drawable.ic_menu_add,
             "Gestionar CLIENTES" to android.R.drawable.ic_menu_manage,
             "Registrar PAGO" to android.R.drawable.ic_menu_edit,
             "Gestionar ACTIVIDADES" to android.R.drawable.ic_menu_day,
             "Gestionar USUARIOS" to android.R.drawable.ic_menu_my_calendar,
-            "Gestionar Profesores" to android.R.drawable.ic_menu_compass,
-            "Asistencia Profesores" to android.R.drawable.ic_menu_agenda
+            "Gestionar Profesores" to android.R.drawable.ic_menu_compass
+            // "Asistencia Profesores" removido
         )
 
         // Adaptador
@@ -42,7 +42,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
             }
         }
 
-        // Click listener ACTUALIZADO con GestionClientesActivity
+        // Click listener ACTUALIZADO (sin Asistencia Profesores)
         gridMenu.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             when (position) {
                 0 -> {
@@ -51,7 +51,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 1 -> {
-                    // Gestionar CLIENTES - ¡NUEVA CONEXIÓN!
+                    // Gestionar CLIENTES
                     val intent = Intent(this@MenuPrincipalActivity, GestionClientesActivity::class.java)
                     startActivity(intent)
                 }
@@ -72,10 +72,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
                     // Gestionar Profesores
                     Toast.makeText(this, "Gestionar Profesores - Próximamente", Toast.LENGTH_SHORT).show()
                 }
-                6 -> {
-                    // Asistencia Profesores
-                    Toast.makeText(this, "Asistencia Profesores - Próximamente", Toast.LENGTH_SHORT).show()
-                }
+                // Posición 6 (Asistencia Profesores) eliminada
             }
         }
 
