@@ -45,7 +45,7 @@
                 android:value=".MenuPrincipalActivity" />
         </activity>
 
-        <!-- NUEVA: Actividad de Gestión de Clientes -->
+        <!-- Actividad de Gestión de Clientes -->
         <activity
             android:name=".GestionClientesActivity"
             android:exported="false"
@@ -77,6 +77,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".GestionClientesActivity" />
         </activity>
+
         <activity
             android:name=".CarnetDigitalActivity"
             android:exported="false"
@@ -115,6 +116,27 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".GestionActividadesActivity" />
+        </activity>
+
+        <!-- ACTIVIDADES DE PROFESORES - CORREGIDAS (DENTRO DE APPLICATION) -->
+        <activity
+            android:name=".GestionProfesoresActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MenuPrincipalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipalActivity" />
+        </activity>
+
+        <activity
+            android:name=".EditarProfesorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".GestionProfesoresActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GestionProfesoresActivity" />
         </activity>
 
     </application>

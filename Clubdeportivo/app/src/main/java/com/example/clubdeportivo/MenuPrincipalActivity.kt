@@ -71,7 +71,8 @@ class MenuPrincipalActivity : AppCompatActivity() {
                 }
                 5 -> {
                     // Gestionar Profesores
-                    Toast.makeText(this, "Gestionar Profesores - Próximamente", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@MenuPrincipalActivity, GestionProfesoresActivity::class.java)
+                    startActivity(intent)
                 }
             }
         }
