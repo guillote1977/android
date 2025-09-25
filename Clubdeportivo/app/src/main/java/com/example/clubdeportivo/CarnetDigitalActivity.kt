@@ -14,20 +14,19 @@ class CarnetDigitalActivity : AppCompatActivity() {
     private lateinit var tvDNICarnet: TextView
     private lateinit var tvNumeroCarnet: TextView
     private lateinit var tvMembresiaCarnet: TextView
-    private lateinit var tvEmisionCarnet: TextView
     private lateinit var tvVencimientoCarnet: TextView
-    private lateinit var tvAptoFisicoCarnet: TextView
     private lateinit var tvInfoCarnet: TextView
     private lateinit var btnEnviarEmail: Button
     private lateinit var btnCompartirCarnet: Button
     private lateinit var btnVolverCarnet: Button
+    private lateinit var btnVerDorso: Button
 
     private lateinit var carnet: Carnet
     private lateinit var cliente: Cliente
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_carnet_digital)
+        setContentView(R.layout.activity_carnet_digital_frente)
 
         // Obtener datos del intent
         cliente = intent.getSerializableExtra("CLIENTE") as? Cliente ?: run {
@@ -57,24 +56,45 @@ class CarnetDigitalActivity : AppCompatActivity() {
         btnEnviarEmail = findViewById(R.id.btnEnviarEmail)
         btnCompartirCarnet = findViewById(R.id.btnCompartirCarnet)
         btnVolverCarnet = findViewById(R.id.btnVolverCarnet)
+        // Buscar el contenedor de botones para agregar el botón de dorso
+        val containerAcciones = findViewById<LinearLayout>(R.id.containerAcciones)
+
+        // Crear botón para ver dorso
+        btnVerDorso = Button(this).apply {
+            text = "📄 Ver Dorso del Carnet"
+            setBackgroundResource(R.drawable.button_primary)
+            setTextColor(0xFFFFFFFF.toInt())
+
+            // Layout params simplificado
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                bottomMargin = 16 // 16 pixels (suficiente para separación)
+            }
+
+            setOnClickListener {
+                mostrarDorso()
+            }
+        }
+
+        // Agregar botón al inicio del contenedor
+        containerAcciones?.addView(btnVerDorso, 0)
     }
+
+    private fun Int.dpToPx(): Int = (this * resources.displayMetrics.density).toInt()
 
     private fun configurarCarnet() {
         tvNombreCarnet.text = cliente.nombre.uppercase()
-        tvDNICarnet.text = "DNI: ${cliente.dni}"
+        tvDNICarnet.text = "ID: ${cliente.dni}"
         tvNumeroCarnet.text = carnet.numeroCarnet
         tvMembresiaCarnet.text = cliente.tipoMembresia.uppercase()
-        tvEmisionCarnet.text = "Emisión: ${carnet.fechaEmision}"
         tvVencimientoCarnet.text = "Vence: ${carnet.fechaVencimiento}"
 
         // Configurar estado del apto físico
         if (cliente.aptoFisico) {
-            tvAptoFisicoCarnet.text = "✅ APTO FÍSICO VIGENTE"
-            tvAptoFisicoCarnet.setTextColor(getColor(android.R.color.holo_green_dark))
             tvInfoCarnet.text = "Carnet activo. Acceso permitido a todas las instalaciones."
         } else {
-            tvAptoFisicoCarnet.text = "⚠️ APTO FÍSICO PENDIENTE"
-            tvAptoFisicoCarnet.setTextColor(getColor(android.R.color.holo_orange_dark))
             tvInfoCarnet.text = "Carnet provisional. Regularice el apto físico para acceso completo."
         }
     }
@@ -91,6 +111,17 @@ class CarnetDigitalActivity : AppCompatActivity() {
         btnVolverCarnet.setOnClickListener {
             finish()
         }
+
+        btnVerDorso.setOnClickListener {
+            mostrarDorso()
+        }
+    }
+
+    private fun mostrarDorso() {
+        val intent = Intent(this, CarnetDorsoActivity::class.java)
+        intent.putExtra("CLIENTE", cliente)
+        intent.putExtra("CARNET", carnet)
+        startActivity(intent)
     }
 
     private fun enviarCarnetPorEmail() {

@@ -139,6 +139,16 @@
                 android:value=".GestionProfesoresActivity" />
         </activity>
 
+        <activity
+            android:name=".CarnetDorsoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".CarnetDigitalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CarnetDigitalActivity" />
+        </activity>
+
     </application>
 
 </manifest>
