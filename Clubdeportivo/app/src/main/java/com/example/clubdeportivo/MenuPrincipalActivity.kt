@@ -61,14 +61,16 @@ class MenuPrincipalActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 3 -> {
-                    // Gestionar ACTIVIDADES - AHORA FUNCIONAL
+                    // Gestionar ACTIVIDADES
                     val intent = Intent(this@MenuPrincipalActivity, GestionActividadesActivity::class.java)
                     startActivity(intent)
                 }
                 4 -> {
-                    // Gestionar USUARIOS
-                    Toast.makeText(this, "Gestionar Usuarios - Próximamente", Toast.LENGTH_SHORT).show()
+                    // Gestionar USUARIOS - IMPLEMENTADO!
+                    val intent = Intent(this@MenuPrincipalActivity, GestionUsuariosActivity::class.java)
+                    startActivity(intent)
                 }
+
                 5 -> {
                     // Gestionar Profesores
                     val intent = Intent(this@MenuPrincipalActivity, GestionProfesoresActivity::class.java)
