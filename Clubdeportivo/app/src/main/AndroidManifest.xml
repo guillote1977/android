@@ -149,6 +149,27 @@
                 android:value=".CarnetDigitalActivity" />
         </activity>
 
+        <!-- GESTION Y EDICION DE USUARIOS IMPLEMENTADAS -->
+        <activity
+            android:name=".GestionUsuariosActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MenuPrincipalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MenuPrincipalActivity" />
+        </activity>
+
+        <activity
+            android:name=".EditarUsuarioActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".GestionUsuariosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GestionUsuariosActivity" />
+        </activity>
+
     </application>
 
 </manifest>
