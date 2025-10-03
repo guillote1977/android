@@ -64,8 +64,8 @@ class CarnetDorsoActivity : AppCompatActivity() {
         if (container != null) {
             val btnVerFrente = Button(this).apply {
                 text = "📄 Ver Frente del Carnet"
-                setBackgroundResource(R.drawable.button_primary)
-                setTextColor(0xFFFFFFFF.toInt())
+                setBackgroundResource(R.drawable.button_bg_deg)
+                setTextColor(0xFF000000.toInt())
                 setOnClickListener {
                     finish() // Volver a la actividad anterior (frente)
                 }

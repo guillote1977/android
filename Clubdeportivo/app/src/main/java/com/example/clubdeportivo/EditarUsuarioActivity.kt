@@ -32,7 +32,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
     }
 
     private fun inicializarVistas() {
-        tvTitulo = findViewById(R.id.tvTitulo)
+        tvTitulo = findViewById(R.id.titleNewUser)
         etNombreUsuario = findViewById(R.id.etNombreUsuario)
         etRol = findViewById(R.id.etRol)
         etPassword = findViewById(R.id.etPassword)

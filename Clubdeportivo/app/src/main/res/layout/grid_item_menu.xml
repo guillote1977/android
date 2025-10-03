@@ -3,10 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:layout_margin="8dp"
-    android:background="@drawable/menu_item_rectangular"
+    android:background="@drawable/button_bg_deg"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="16dp"
+    >
 
     <ImageView
         android:id="@+id/iconMenu"

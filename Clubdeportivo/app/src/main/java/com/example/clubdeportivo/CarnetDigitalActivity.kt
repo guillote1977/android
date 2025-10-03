@@ -62,8 +62,8 @@ class CarnetDigitalActivity : AppCompatActivity() {
         // Crear botón para ver dorso
         btnVerDorso = Button(this).apply {
             text = "📄 Ver Dorso del Carnet"
-            setBackgroundResource(R.drawable.button_primary)
-            setTextColor(0xFFFFFFFF.toInt())
+            setBackgroundResource(R.drawable.button_bg_deg)
+            setTextColor(0xFF000000.toInt())
 
             // Layout params simplificado
             layoutParams = LinearLayout.LayoutParams(
