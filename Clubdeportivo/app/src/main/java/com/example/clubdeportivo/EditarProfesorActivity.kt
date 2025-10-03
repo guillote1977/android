@@ -34,7 +34,7 @@ class EditarProfesorActivity : AppCompatActivity() {
     }
 
     private fun inicializarVistas() {
-        tvTitulo = findViewById(R.id.tvTitulo)
+        tvTitulo = findViewById(R.id.titleNewTeacher)
         etNombreProfesor = findViewById(R.id.etNombreProfesor)
         etDNI = findViewById(R.id.etDNI)
         etTelefono = findViewById(R.id.etTelefono)

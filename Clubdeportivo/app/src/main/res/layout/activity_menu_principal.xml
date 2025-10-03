@@ -18,7 +18,7 @@
         <ImageView
             android:layout_width="250dp"
             android:layout_height="120dp"
-            android:src="@drawable/pr"
+            android:src="@drawable/welcome_logo_onyx"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"/>
 
@@ -51,7 +51,7 @@
             android:layout_height="50dp"
             android:text="Cerrar Sesión"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_logout_rectangular"
+            android:background="@drawable/button_bg_deg"
             android:textSize="16sp"
             android:textStyle="bold"/>
 

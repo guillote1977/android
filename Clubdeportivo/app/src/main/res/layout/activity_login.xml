@@ -82,7 +82,7 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/button_primary"
+            android:background="@drawable/button_bg_deg"
             android:text="INGRESAR"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"

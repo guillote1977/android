@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/main_background_gradient"
     android:padding="16dp">
 
@@ -12,15 +13,43 @@
         android:gravity="center">
 
         <!-- Título -->
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/databaseConnection"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Configuración BD"
-            android:textColor="#FFFFFF"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="30dp"/>
+            android:layout_height="50dp"
+            android:paddingStart="50dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/dbIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/database_svgrepo"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textViewDBConnection"
+                app:layout_constraintHorizontal_bias="0.064"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666"/>
+
+            <TextView
+                android:id="@+id/textViewDBConnection"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="350dp"
+                android:text="Configuración BD"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dbIcon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Contenedor de configuración -->
         <LinearLayout
@@ -142,7 +171,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:text="GUARDAR"
-                android:background="@drawable/button_primary"
+                android:background="@drawable/button_bg_deg"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
